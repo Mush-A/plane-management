@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PlaneManagement {
@@ -30,10 +31,18 @@ public class PlaneManagement {
 
         System.out.println("Welcome to the Plane Management application");
 
-        int input = getMenuInput();
+        init();
+    }
 
-        if (input != 0) methodCaller(input);
-        else System.out.println("Program quit.");
+    private void init() {
+        int input;
+
+        do {
+            input = getMenuInput();
+            methodCaller(input);
+        } while (input != 0);
+
+        System.out.println("Program quit.");
     }
 
     private int getMenuInput() {
@@ -82,6 +91,15 @@ public class PlaneManagement {
             case 1:
                 buySeat();
                 break;
+            case 2:
+                cancelSeat();
+                break;
+            case 3:
+                findFirstAvailable();
+                break;
+            case 4:
+                showSeatingPlan();
+                break;
             default:
                 System.out.println("That is not a valid option sire!");
         }
@@ -95,6 +113,42 @@ public class PlaneManagement {
         int seatIndex = seatNumberInput - 1;
 
         seatsMatrix[rowIndex][seatIndex] = 1;
+    }
+
+    private void cancelSeat() {
+        String rowInput = getValidRowInput();
+        int rowIndex = getRowIndex(rowInput);
+
+        int seatNumberInput = getValidSeatNumberInput(rowInput);
+        int seatIndex = seatNumberInput - 1;
+
+        seatsMatrix[rowIndex][seatIndex] = 0;
+    }
+
+    private void findFirstAvailable() {
+        for (int rowIndex = 0; rowIndex < seatsMatrix.length; rowIndex++) {
+            for (int seatIndex = 0; seatIndex < seatsMatrix[rowIndex].length; seatIndex++) {
+                if (seatsMatrix[rowIndex][seatIndex] == 0) {
+                    System.out.println("First available seat at " + validRows[rowIndex] + (seatIndex + 1));
+                }
+            }
+        }
+    }
+
+    private void showSeatingPlan() {
+        System.out.println();
+        for (int rowIndex = 0; rowIndex < seatsMatrix.length; rowIndex++) {
+            for (int seatIndex = 0; seatIndex < seatsMatrix[rowIndex].length; seatIndex++) {
+                if (seatsMatrix[rowIndex][seatIndex] == 0) {
+                    System.out.print("O");
+                }
+                else {
+                    System.out.print("X");
+                }
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
     private String getValidRowInput() {
@@ -142,7 +196,12 @@ public class PlaneManagement {
                 }
 
                 isValidInput = true;
-            } catch (Exception exception) {
+            }
+            catch (InputMismatchException exception) {
+                System.out.println("Input must be an integer.");
+                scanner.nextLine();
+            }
+            catch (Exception exception) {
                 System.out.println("Something went wrong...");
                 scanner.nextLine();
             }
