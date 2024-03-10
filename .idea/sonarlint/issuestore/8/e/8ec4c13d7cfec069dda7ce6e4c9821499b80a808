@@ -1,6 +1,6 @@
 
 ¡
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥¸æ“ýÿÿÿÿ8Š¡„µâ1J$7e8d0618-a509-4a42-b440-ef5b6f830bdb
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¥¸æ“ýÿÿÿÿ8Š¡„µâ1J$5406ac1d-9149-4763-b6ca-eb9ca7c378b6
 ²
-java:S1192"oDefine a constant instead of duplicating this literal "**********************************************" 3 times.(«À‚Ö8‡€ð²â1J$5b9c2d8e-2824-4efe-9e79-724429b57268
- 	java:S135-"YReduce the total number of break and continue statements in this loop to use at most one.(ü§è½ùÿÿÿÿ8ˆ€ð²â1J$c76ca38d-595e-4c04-83a5-ed788e67ace8
+java:S1192"oDefine a constant instead of duplicating this literal "**********************************************" 3 times.(«À‚Ö8‡€ð²â1J$93d85247-25fb-4b48-a7f9-2063d84e150f
+ 	java:S135-"YReduce the total number of break and continue statements in this loop to use at most one.(ü§è½ùÿÿÿÿ8ˆ€ð²â1J$42c0410c-39a8-4c9e-b2fa-ef4534ac2c59

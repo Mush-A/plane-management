@@ -32,7 +32,8 @@ public class PlaneModel
         }
     }
 
-    private void populatePriceMatrix() {
+    private void populatePriceMatrix()
+    {
         for (int i = 0; i < priceMatrix.length; i++) {
             for (int j = 0; j < priceMatrix[i].length; j++) {
                 if (j < 5) {
