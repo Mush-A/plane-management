@@ -39,7 +39,7 @@ public class PlaneView
         return this.searchString.linearSearch(rowLabels, rowInput);
     }
 
-    public int getSeatNumberInput(String[] rowLabels, String rowInput, int[][] seatsMatrix)
+    public int getSeatNumberInput(String[] rowLabels, String rowInput, int[][] seatsMatrix, boolean validateOccupancy)
     {
         int seatNumberInput = -1;
         boolean isValidInput = false;
@@ -56,7 +56,7 @@ public class PlaneView
                     continue;
                 }
 
-                if (seatsMatrix[rowIndex][seatNumberInput - 1] == 1) {
+                if (validateOccupancy && seatsMatrix[rowIndex][seatNumberInput - 1] == 1) {
                     System.out.println("\nSeat already occupied. Please choose another seat.\n");
                     continue;
                 }

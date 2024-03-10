@@ -43,12 +43,10 @@ public class Ticket {
         this.person = person;
     }
 
-    public void printTicketInfo() {
+    public void printTicketInfo(String[] rowLabels) {
         System.out.println("Ticket Information:");
-        System.out.println("Row: " + row);
+        System.out.println("Row: " + rowLabels[row]);
         System.out.println("Seat: " + seat);
         System.out.println("Price: $" + price);
-        System.out.println("Person Information:");
-        person.printInfo();
     }
 }

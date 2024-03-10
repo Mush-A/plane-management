@@ -22,7 +22,7 @@ public class PlaneManagement
     public void buySeat()
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
-        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix);
+        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, true);
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
@@ -34,7 +34,7 @@ public class PlaneManagement
     public void cancelSeat()
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
-        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix);
+        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, true);
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
@@ -76,7 +76,7 @@ public class PlaneManagement
         double totalSales = 0;
         for (Ticket ticket : this.tickets) {
             if (ticket != null) {
-                ticket.printTicketInfo();
+                ticket.printTicketInfo(this.planeModel.rowLabels);
                 totalSales += ticket.getPrice();
             }
         }
@@ -86,7 +86,7 @@ public class PlaneManagement
     public void searchTicket()
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
-        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix);
+        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, false);
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
@@ -94,7 +94,7 @@ public class PlaneManagement
         Ticket ticket = tickets[rowIndex * this.planeModel.seatsMatrix[rowIndex].length + seatIndex];
 
         if (ticket != null) {
-            ticket.printTicketInfo();
+            ticket.printTicketInfo(this.planeModel.rowLabels);
             ticket.getPerson().printInfo();
         } else {
             System.out.println("This seat is available.");
