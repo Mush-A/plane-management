@@ -8,7 +8,11 @@ public class Person {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Invalid name. Name cannot be null or empty.");
+        }
     }
 
     public String getSurname() {
@@ -16,7 +20,11 @@ public class Person {
     }
 
     public void setSurname(String surname) {
-        this.surname = surname;
+        if (surname != null && !surname.trim().isEmpty()) {
+            this.surname = surname;
+        } else {
+            throw new IllegalArgumentException("Invalid surname. Surname cannot be null or empty.");
+        }
     }
 
     public String getEmail() {
@@ -24,7 +32,11 @@ public class Person {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (email != null && !email.trim().isEmpty()) {
+            this.email = email;
+        } else {
+            throw new IllegalArgumentException("Invalid email. Email cannot be null or empty.");
+        }
     }
 
     public void printInfo() {

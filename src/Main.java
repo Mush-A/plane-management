@@ -2,6 +2,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        PlaneManagement planeManagement = new PlaneManagement();
+        MenuController menuController = new MenuController();
+        menuController.startMenu();
     }
 }
