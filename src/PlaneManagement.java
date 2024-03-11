@@ -47,10 +47,13 @@ public class PlaneManagement
 
     public void findFirstAvailable()
     {
-        for (int rowIndex = 0; rowIndex < this.planeModel.seatsMatrix.length; rowIndex++) {
-            for (int seatIndex = 0; seatIndex < this.planeModel.seatsMatrix[rowIndex].length; seatIndex++) {
-                if (this.planeModel.seatsMatrix[rowIndex][seatIndex] == 0) {
-                    System.out.println("First available seat at " + this.planeModel.rowLabels[rowIndex] + (seatIndex + 1));
+        search: {
+            for (int rowIndex = 0; rowIndex < this.planeModel.seatsMatrix.length; rowIndex++) {
+                for (int seatIndex = 0; seatIndex < this.planeModel.seatsMatrix[rowIndex].length; seatIndex++) {
+                    if (this.planeModel.seatsMatrix[rowIndex][seatIndex] == 0) {
+                        System.out.println("First available seat at " + this.planeModel.rowLabels[rowIndex] + (seatIndex + 1));
+                        break search;
+                    }
                 }
             }
         }

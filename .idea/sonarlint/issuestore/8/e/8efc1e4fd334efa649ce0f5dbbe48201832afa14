@@ -1,5 +1,5 @@
 
-‰
-java:S1854>"ARemove this useless assignment to local variable "directoryName".(Áì”ëûÿÿÿÿ8ìÓˆÜâ1J$b1ab3b56-4417-43ca-8828-d0d6000c50f0
-z
-java:S1481>"2Remove this unused "directoryName" local variable.(Áì”ëûÿÿÿÿ8îÓˆÜâ1J$ad11b2ef-007b-4241-ad82-e1ba66a8d28f
+l
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8Ëå¼Üâ1J$bba9bbdf-f060-4667-bfbb-be425840ad74
+w
+java:S1128"/Remove this unused import 'java.io.FileWriter'.(Ã‘ÅÃıÿÿÿÿ8Íå¼Üâ1J$914bcf45-f4e8-4473-acdb-cec95723d8ed

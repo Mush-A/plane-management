@@ -54,7 +54,12 @@ public class MenuView
                 }
 
                 isValidInput = true;
-            } catch (Exception exception) {
+            }
+            catch (IllegalArgumentException exception) {
+                System.out.println("Invalid input. Try again:");
+                this.scanner.nextLine();
+            }
+            catch (Exception exception) {
                 System.out.println("Something went wrong...");
                 this.scanner.nextLine();
             }

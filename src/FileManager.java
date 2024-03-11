@@ -3,7 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class FileManager {
-    private String directoryName;
+    private final String directoryName;
     private String fileName;
     private String fileContent;
 
@@ -34,18 +34,8 @@ public class FileManager {
 
         FileWriter writer = new FileWriter(file);
         writer.write(fileContent);
-        writer.close();
-    }
+        writer.flush();
 
-    public static void main(String[] args) {
-        try {
-            new FileManager("testDir")
-                    .setFileName("testFile.txt")
-                    .setFileContent("Hello, world!")
-                    .createDirectoryAndFile();
-            System.out.println("Directory and file created successfully.");
-        } catch (IOException e) {
-            System.err.println("Error: " + e.getMessage());
-        }
+        writer.close();
     }
 }

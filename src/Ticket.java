@@ -59,7 +59,6 @@ public class Ticket {
 
     public void save(String[] rowLabels)
     {
-        String directoryName = "tickets";
         String fileName = rowLabels[rowIndex] + (seatIndex + 1) + ".txt";
 
         String content = "Ticket Information:\n" +

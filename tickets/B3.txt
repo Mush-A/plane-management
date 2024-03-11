@@ -1,6 +1,6 @@
 Ticket Information:
-Row: A
-Seat: 1
+Row: B
+Seat: 3
 Price: $200.0
 Person Information:
 Name: we we
