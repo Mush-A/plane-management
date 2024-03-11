@@ -1,30 +1,37 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class Ticket {
-    private int row;
-    private int seat;
+    private int rowIndex;
+    private int seatIndex;
     private double price;
     private Person person;
+    private final FileManager fileManager;
 
     public Ticket(int row, int seat, double price, Person person) {
-        this.row = row;
-        this.seat = seat;
+        this.rowIndex = row;
+        this.seatIndex = seat;
         this.price = price;
         this.person = person;
+
+        this.fileManager = new FileManager("tickets");
     }
 
-    public int getRow() {
-        return row;
+    public int getRowIndex() {
+        return rowIndex;
     }
 
-    public void setRow(int row) {
-        this.row = row;
+    public void setRowIndex(int rowIndex) {
+        this.rowIndex = rowIndex;
     }
 
-    public int getSeat() {
-        return seat;
+    public int getSeatIndex() {
+        return seatIndex;
     }
 
-    public void setSeat(int seat) {
-        this.seat = seat;
+    public void setSeatIndex(int seatIndex) {
+        this.seatIndex = seatIndex;
     }
 
     public double getPrice() {
@@ -45,8 +52,32 @@ public class Ticket {
 
     public void printTicketInfo(String[] rowLabels) {
         System.out.println("Ticket Information:");
-        System.out.println("Row: " + rowLabels[row]);
-        System.out.println("Seat: " + seat);
+        System.out.println("Row: " + rowLabels[rowIndex]);
+        System.out.println("Seat: " + seatIndex);
         System.out.println("Price: $" + price);
+    }
+
+    public void save(String[] rowLabels)
+    {
+        String directoryName = "tickets";
+        String fileName = rowLabels[rowIndex] + (seatIndex + 1) + ".txt";
+
+        String content = "Ticket Information:\n" +
+                "Row: " + rowLabels[rowIndex] + "\n" +
+                "Seat: " + (seatIndex + 1) + "\n" +
+                "Price: $" + price + "\n" +
+                "Person Information:\n" +
+                "Name: " + this.person.getName() + " " + this.person.getSurname() + "\n" +
+                "Email: " + this.person.getEmail() + "\n";
+
+        try {
+            this.fileManager
+                    .setFileName(fileName)
+                    .setFileContent(content)
+                    .createDirectoryAndFile();
+
+        } catch (IOException e) {
+            System.out.println("Unable to save ticket: " + e.getMessage());
+        }
     }
 }

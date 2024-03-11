@@ -28,7 +28,9 @@ public class PlaneManagement
         int seatIndex = this.planeView.getSeatIndex(columnValue);
 
         this.planeModel.seatsMatrix[rowIndex][seatIndex] = 1;
-        tickets[rowIndex * this.planeModel.seatsMatrix[rowIndex].length + seatIndex] = this.ticketView.getTicket(rowIndex, seatIndex, this.planeModel.priceMatrix);
+        Ticket ticket = this.ticketView.getTicket(rowIndex, seatIndex, this.planeModel.priceMatrix);
+        tickets[rowIndex * this.planeModel.seatsMatrix[rowIndex].length + seatIndex] = ticket;
+        ticket.save(this.planeModel.rowLabels);
     }
 
     public void cancelSeat()

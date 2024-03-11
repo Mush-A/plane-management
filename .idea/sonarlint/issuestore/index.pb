@@ -45,3 +45,16 @@ C
 src/PersonView.java,b\d\bd3a9c48391cfde6e3ae7db79dd333c27aeca642
 C
 src/TicketView.java,5\6\5624f3bceaa916992edcb66f6b1cd65ced291242
+E
+tickets/ticket-B1.txt,a\f\af207499d192fd9a23ef68e79bf383a74a0fe049
+D
+src/FileManager.java,b\e\bee340f52a8976d24428faf6e2180ab3f576c2f5
+6
+B4.txt,3\0\30294a5f5676139d1fe858251e740754f25593bf
+>
+tickets/A1.txt,3\b\3b02d1e937dfbdf6a8ec95bddb56ce50a5991a7e
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+>
+tickets/A6.txt,e\b\ebc19adfbb6257c8bb85ab47def5f8da2cef3540
