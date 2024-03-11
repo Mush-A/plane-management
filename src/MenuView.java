@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import helper.Search;
 
@@ -55,7 +56,7 @@ public class MenuView
 
                 isValidInput = true;
             }
-            catch (IllegalArgumentException exception) {
+            catch (InputMismatchException exception) {
                 System.out.println("Invalid input. Try again:");
                 this.scanner.nextLine();
             }

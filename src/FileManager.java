@@ -35,7 +35,6 @@ public class FileManager {
         FileWriter writer = new FileWriter(file);
         writer.write(fileContent);
         writer.flush();
-
         writer.close();
     }
 }

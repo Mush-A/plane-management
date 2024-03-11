@@ -1,5 +1,3 @@
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class Ticket {
@@ -75,6 +73,7 @@ public class Ticket {
                     .setFileContent(content)
                     .createDirectoryAndFile();
 
+            System.out.println("Ticket saved!");
         } catch (IOException e) {
             System.out.println("Unable to save ticket: " + e.getMessage());
         }
