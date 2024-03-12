@@ -51,7 +51,7 @@ public class Ticket {
     public void printTicketInfo(String[] rowLabels) {
         System.out.println("Ticket Information:");
         System.out.println("Row: " + rowLabels[rowIndex]);
-        System.out.println("Seat: " + seatIndex);
+        System.out.println("Seat: " + (seatIndex + 1));
         System.out.println("Price: $" + price);
     }
 

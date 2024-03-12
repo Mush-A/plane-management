@@ -1,7 +1,7 @@
 Ticket Information:
 Row: A
-Seat: 1
+Seat: 2
 Price: $200.0
 Person Information:
-Name: we we
-Email: we
+Name: sd sd
+Email: sd
