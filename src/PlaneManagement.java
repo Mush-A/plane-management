@@ -22,7 +22,7 @@ public class PlaneManagement
     public void buySeat()
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
-        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, true);
+        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, true, false);
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
@@ -36,7 +36,7 @@ public class PlaneManagement
     public void cancelSeat()
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
-        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, true);
+        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, false, true);
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
@@ -91,7 +91,7 @@ public class PlaneManagement
     public void searchTicket()
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
-        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, false);
+        int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, false, false);
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
