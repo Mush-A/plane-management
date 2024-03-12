@@ -24,6 +24,10 @@ public class PlaneManagement
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
         int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, true, false);
 
+        if (columnValue == -1 || rowValue.isEmpty()) {
+            return;
+        }
+
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
 
@@ -37,6 +41,10 @@ public class PlaneManagement
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
         int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, false, true);
+
+        if (columnValue == -1 || rowValue.isEmpty()) {
+            return;
+        }
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);
@@ -92,6 +100,10 @@ public class PlaneManagement
     {
         String rowValue = this.planeView.getRowInput(this.planeModel.rowLabels);
         int columnValue = this.planeView.getSeatNumberInput(this.planeModel.rowLabels, rowValue, this.planeModel.seatsMatrix, false, false);
+
+        if (columnValue == -1 || rowValue.isEmpty()) {
+            return;
+        }
 
         int rowIndex = this.planeView.getRowIndex(this.planeModel.rowLabels, rowValue);
         int seatIndex = this.planeView.getSeatIndex(columnValue);

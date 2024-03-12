@@ -1,4 +1,6 @@
 
 œ
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(…ß¿8à½§ƒã1J$7ca45470-f8b4-48c5-9720-6f844fe4353c
- 	java:S135/"YReduce the total number of break and continue statements in this loop to use at most one.(ü§è½ùÿÿÿÿ8á½§ƒã1J$3c4d5164-f79d-4789-bb41-6dbc7b38e5c4
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(…ß¿8ê›Êƒã1J$cc74244a-ef81-491d-a295-372c1508f098
+ 	java:S1353"YReduce the total number of break and continue statements in this loop to use at most one.(ü§è½ùÿÿÿÿ8ë›Êƒã1J$55c6dd8a-3bb6-4522-9518-f9575dad87cd
+š
+java:S3776."RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(îÅ²¸øÿÿÿÿ8ö‡Şƒã1J$f219870f-9769-4707-9ab8-fac041edef94

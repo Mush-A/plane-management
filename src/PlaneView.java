@@ -23,6 +23,10 @@ public class PlaneView
             System.out.print("Enter row: ");
             rowInput = this.scanner.next();
 
+            if (rowInput.equals("0")) {
+                return "";
+            }
+
             if (this.searchString.linearSearch(rowLabels, rowInput) == -1) {
                 System.out.println("\nInvalid row. Try again:\n");
                 continue;
@@ -48,6 +52,10 @@ public class PlaneView
             System.out.print("Enter seat number for row " + rowInput + ": ");
             try {
                 seatNumberInput = scanner.nextInt();
+
+                if (seatNumberInput == 0) {
+                    return -1;
+                }
 
                 int rowIndex = this.searchString.linearSearch(rowLabels, rowInput);
                 int maxSeats = seatsMatrix[rowIndex].length;
