@@ -1,11 +1,21 @@
 import java.util.Arrays;
 
+/**
+ * PlaneModel class represents a model of a plane with seat and price matrices.
+ */
 public class PlaneModel
 {
+    // 2D array representing the seats in the plane
     public int[][] seatsMatrix;
+    // 2D array representing the price of each seat in the plane
     public int[][] priceMatrix;
+    // Array representing the labels of each row in the plane
     public final String[] rowLabels = {"A", "B", "C", "D"};
 
+    /**
+     * Constructor for PlaneModel class.
+     * Initializes the seats and price matrices and populates them.
+     */
     public PlaneModel()
     {
         this.seatsMatrix = new int[4][];
@@ -25,6 +35,9 @@ public class PlaneModel
         this.populatePriceMatrix();
     }
 
+    /**
+     * Populates the seats matrix with zeros.
+     */
     private void populateSeatsMatrix()
     {
         for (int[] array : seatsMatrix) {
@@ -32,6 +45,9 @@ public class PlaneModel
         }
     }
 
+    /**
+     * Populates the price matrix with prices based on seat position.
+     */
     private void populatePriceMatrix()
     {
         for (int i = 0; i < priceMatrix.length; i++) {

@@ -1,12 +1,20 @@
 import java.io.IOException;
 
+/**
+ * The Ticket class represents a ticket for a seat at an event.
+ * Each ticket is associated with a row, seat, price, and a person.
+ */
 public class Ticket {
-    private int rowIndex;
-    private int seatIndex;
-    private double price;
-    private Person person;
-    private final FileManager fileManager;
+    private int rowIndex; // The index of the row for the seat
+    private int seatIndex; // The index of the seat in the row
+    private double price; // The price of the ticket
+    private Person person; // The person who owns the ticket
+    private final FileManager fileManager; // The file manager to handle file operations
 
+    /**
+     * Constructs a new Ticket with the given row, seat, price, and person.
+     * Initializes the file manager with the directory "tickets".
+     */
     public Ticket(int row, int seat, double price, Person person) {
         this.rowIndex = row;
         this.seatIndex = seat;
@@ -16,38 +24,12 @@ public class Ticket {
         this.fileManager = new FileManager("tickets");
     }
 
-    public int getRowIndex() {
-        return rowIndex;
-    }
+    // Getter and setter methods for rowIndex, seatIndex, price, and person
 
-    public void setRowIndex(int rowIndex) {
-        this.rowIndex = rowIndex;
-    }
-
-    public int getSeatIndex() {
-        return seatIndex;
-    }
-
-    public void setSeatIndex(int seatIndex) {
-        this.seatIndex = seatIndex;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public Person getPerson() {
-        return person;
-    }
-
-    public void setPerson(Person person) {
-        this.person = person;
-    }
-
+    /**
+     * Prints the ticket information to the console.
+     * @param rowLabels The labels for the rows.
+     */
     public void printTicketInfo(String[] rowLabels) {
         System.out.println("Ticket Information:");
         System.out.println("Row: " + rowLabels[rowIndex]);
@@ -55,6 +37,12 @@ public class Ticket {
         System.out.println("Price: $" + price);
     }
 
+    /**
+     * Saves the ticket information to a file.
+     * The file name is based on the row label and seat number.
+     * The file content includes the ticket and person information.
+     * @param rowLabels The labels for the rows.
+     */
     public void save(String[] rowLabels)
     {
         String fileName = rowLabels[rowIndex] + (seatIndex + 1) + ".txt";
